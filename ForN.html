@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tấm Thiệp Phép Thuật Noel ✨</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  </head>
+  <body>
+    <div id="snow-effect"></div>
+
+    <div class="card-container">
+      <div id="card-front" class="card-face active">
+        <h1 class="great-vibes">Merry Christmas,</h1>
+        <h1 class="great-vibes">[Tên Người Nhận]</h1>
+        <p class="playfair-display">Bạn có một thông điệp đặc biệt đang chờ.</p>
+        <button id="open-card-button" class="cta-button">Mở Thiệp</button>
+      </div>
+
+      <div id="card-inner" class="card-face hidden">
+        <h2 class="great-vibes">Gửi Người Ta...</h2>
+
+        <p class="playfair-display message-intro">
+          Noel này tôi đã gửi điều ước tới Santa Claus, và điều ước duy nhất của
+          tôi là được thấy nụ cười lấp lánh kia.
+        </p>
+
+        <p class="playfair-display message-body">
+          Tôi biết dạo này người ta khá bận rộn. Nhưng nếu người ta có thời
+          gian, tôi rất muốn mời người ta đi chơi Noel cùng tôi. Chúng ta có thể
+          cùng nhau đi ăn, xem phim, đi dạo,... bất cứ điều gì người ta thích.
+        </p>
+
+        <p class="playfair-display message-closing">
+          Tôi hi vọng nhận được quà từ Santa Claus.
+        </p>
+
+        <button id="reveal-surprise-button" class="cta-button">
+          Tiếp theo...
+        </button>
+      </div>
+
+      <div id="card-surprise" class="card-face hidden">
+        <h2 class="great-vibes">Một chút kỷ niệm</h2>
+
+        <div class="media-placeholder">
+          <img src="./assets/noimage.png" alt="Kỷ niệm Noel của chúng ta" />
+        </div>
+
+        <p class="playfair-display final-words">
+          Hy vọng ta sẽ có ảnh để thay cái ảnh này sớm nhé! Hãy cho tôi biết câu
+          trả lời nhé !
+        </p>
+        <button
+          class="cta-button final-action-button"
+          onclick="alert('Anh đã nhận được phản hồi của em! Sẽ liên hệ lại ngay nhé ❤️');"
+        >
+          Chấp Nhận Lời Mời
+        </button>
+      </div>
+    </div>
+
+    <footer id="custom-signature">
+      <p>Được tạo bởi <strong>Dĩ Khang</strong></p>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

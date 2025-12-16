@@ -1,0 +1,193 @@
+:root {
+  --primary-red: #8b0000;
+  --gold-accent: #daa520;
+  --text-color: #333;
+  --bg-light: #f8f8f8;
+  --card-bg: #ffffff;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* --- HIỆU ỨNG TUYẾT RƠI (particles.js) --- */
+#snow-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-red);
+  background-image: url("https://www.transparenttextures.com/patterns/white-prism.png");
+  z-index: 0;
+}
+
+/* --- CONTAINER THIỆP --- */
+.card-container {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  min-height: 450px;
+  z-index: 10;
+  perspective: 1000px;
+}
+
+.card-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  text-align: center;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  border: 2px solid var(--gold-accent);
+}
+
+/* --- HIỆU ỨNG ẨN/HIỆN & MỞ THIỆP --- */
+.card-face.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: rotateY(-180deg);
+}
+
+.card-face.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: rotateY(0deg);
+}
+
+/* --- TYPOGRAPHY --- */
+.great-vibes {
+  font-family: "Great Vibes", cursive;
+  font-size: 3.5em;
+  color: var(--primary-red);
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1em;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+h2.great-vibes {
+  font-size: 2.8em;
+  margin-bottom: 25px;
+}
+
+.message-closing,
+.final-words {
+  font-weight: 700;
+  color: var(--primary-red);
+  margin-top: 30px;
+}
+
+/* --- BUTTONS --- */
+.cta-button {
+  background-color: var(--gold-accent);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  margin-top: 25px;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background-color: #c09d3e;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- MEDIA PLACEHOLDER (Ảnh/Video) --- */
+.media-placeholder {
+  margin: 30px auto;
+  width: 100%;
+  max-width: 400px;
+  border: 3px solid var(--primary-red);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.media-placeholder img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* --- CHỮ KÝ CÁ NHÂN (Yêu cầu thêm) --- */
+#custom-signature {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.5); /* Màu trắng mờ trên nền đỏ */
+  font-family: "Roboto", sans-serif;
+  text-align: right;
+  pointer-events: none; /* Không chặn tương tác */
+  padding: 5px;
+}
+
+/* ========================================= */
+/* --- RESPONSIVE DESIGN CHO ĐIỆN THOẠI --- */
+/* ========================================= */
+@media (max-width: 600px) {
+  .card-container {
+    width: 95%;
+    margin: 20px auto;
+    min-height: 400px;
+  }
+
+  .card-face {
+    padding: 25px 20px; /* Giảm padding để có thêm không gian */
+  }
+
+  .great-vibes {
+    font-size: 2.2em; /* Giảm kích thước font tiêu đề chính */
+  }
+
+  h2.great-vibes {
+    font-size: 1.8em;
+  }
+
+  .playfair-display {
+    font-size: 0.9em; /* Giảm kích thước font nội dung */
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    margin-top: 20px;
+  }
+
+  #custom-signature {
+    bottom: 5px;
+    right: 5px;
+    font-size: 0.65em; /* Giảm kích thước chữ ký */
+  }
+}
