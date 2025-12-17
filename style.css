@@ -82,8 +82,8 @@ body {
 
 .playfair-display {
   font-family: "Playfair Display", serif;
-  font-size: 1.1em;
-  line-height: 1.7;
+  font-size: 0.9em;
+  /* line-height: 1.7; */
   margin-bottom: 20px;
 }
 
