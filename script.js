@@ -80,8 +80,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealSurpriseButton = document.getElementById(
     "reveal-surprise-button"
   );
+  // Thêm biến audio vào đầu file script.js
+  const bgMusic = document.getElementById("christmas-music");
 
   openCardButton.addEventListener("click", () => {
+    // Kích hoạt nhạc khi người dùng tương tác
+    bgMusic.play().catch((error) => {
+      console.log("Trình duyệt chặn tự động phát nhạc, cần tương tác thêm.");
+    });
+    bgMusic.volume = 0.7; // Điều chỉnh âm lượng nhạc nền
+
     cardFront.classList.remove("active");
     cardFront.classList.add("hidden");
 
